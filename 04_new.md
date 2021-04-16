@@ -1,121 +1,121 @@
-# ‰‰K 4: Azure IoT Edge ‚ðŽg‚¢Žn‚ß‚é
+# æ¼”ç¿’ 4: Azure IoT Edge ã‚’ä½¿ã„å§‹ã‚ã‚‹
 
-## ƒVƒiƒŠƒI
+## ã‚·ãƒŠãƒªã‚ª
 
-–c‘å‚È”‚ÌƒfƒoƒCƒX‚ªƒfƒvƒƒC‚³‚ê‚Ä‚¨‚èA‘å—Ê‚Ìƒf[ƒ^‚ªŽûW‚³‚ê‚ÄƒNƒ‰ƒEƒh‚É‘—M‚³‚ê‚Ä‚¢‚Ü‚·BEdge ‚ÉƒCƒ“ƒeƒŠƒWƒFƒ“ƒX‚ð“±“ü‚·‚é‚±‚Æ‚Í‰Â”\‚Å‚·‚©?
+è†¨å¤§ãªæ•°ã®ãƒ‡ãƒã‚¤ã‚¹ãŒãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã¦ãŠã‚Šã€å¤§é‡ã®ãƒ‡ãƒ¼ã‚¿ãŒåŽé›†ã•ã‚Œã¦ã‚¯ãƒ©ã‚¦ãƒ‰ã«é€ä¿¡ã•ã‚Œã¦ã„ã¾ã™ã€‚Edge ã«ã‚¤ãƒ³ãƒ†ãƒªã‚¸ã‚§ãƒ³ã‚¹ã‚’å°Žå…¥ã™ã‚‹ã“ã¨ã¯å¯èƒ½ã§ã™ã‹?
 
-Fabrikam, Inc. ‚ÍAIoT Edge ƒQ[ƒgƒEƒFƒC ƒfƒoƒCƒX‚ðŽg—p‚µ‚ÄA‘¦À‚Éˆ—‚·‚é‚½‚ß‚ÉƒCƒ“ƒeƒŠƒWƒFƒ“ƒX‚Ìˆê•”‚ðƒGƒbƒW‚É“±“ü‚µ‚½‚¢‚Æl‚¦‚Ä‚¢‚Ü‚·Bƒf[ƒ^‚Ìˆê•”‚Íˆø‚«‘±‚«ƒNƒ‰ƒEƒh‚É‘—M‚³‚ê‚Ü‚·B‚³‚ç‚ÉAƒf[ƒ^ ƒCƒ“ƒeƒŠƒWƒFƒ“ƒX‚ð IoT Edge ‚É“±“ü‚·‚é‚±‚Æ‚ÅAƒ[ƒJƒ‹ ƒlƒbƒgƒ[ƒN‚ª•nŽã‚Èê‡‚Å‚àAƒf[ƒ^‚ðˆ—‚µ‚Äv‘¬‚É‘Î‰ž‚Å‚«‚é‚æ‚¤‚É‚È‚è‚Ü‚·B
+Fabrikam, Inc. ã¯ã€IoT Edge ã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤ ãƒ‡ãƒã‚¤ã‚¹ã‚’ä½¿ç”¨ã—ã¦ã€å³åº§ã«å‡¦ç†ã™ã‚‹ãŸã‚ã«ã‚¤ãƒ³ãƒ†ãƒªã‚¸ã‚§ãƒ³ã‚¹ã®ä¸€éƒ¨ã‚’ã‚¨ãƒƒã‚¸ã«å°Žå…¥ã—ãŸã„ã¨è€ƒãˆã¦ã„ã¾ã™ã€‚ãƒ‡ãƒ¼ã‚¿ã®ä¸€éƒ¨ã¯å¼•ãç¶šãã‚¯ãƒ©ã‚¦ãƒ‰ã«é€ä¿¡ã•ã‚Œã¾ã™ã€‚ã•ã‚‰ã«ã€ãƒ‡ãƒ¼ã‚¿ ã‚¤ãƒ³ãƒ†ãƒªã‚¸ã‚§ãƒ³ã‚¹ã‚’ IoT Edge ã«å°Žå…¥ã™ã‚‹ã“ã¨ã§ã€ãƒ­ãƒ¼ã‚«ãƒ« ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯ãŒè²§å¼±ãªå ´åˆã§ã‚‚ã€ãƒ‡ãƒ¼ã‚¿ã‚’å‡¦ç†ã—ã¦è¿…é€Ÿã«å¯¾å¿œã§ãã‚‹ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
 
-‚±‚ê‚Ü‚Å‚ÉAAzure IoT Edge ƒ\ƒŠƒ…[ƒVƒ‡ƒ“‚Ìƒvƒƒgƒ^ƒCƒsƒ“ƒO‚ðs‚Á‚Ä‚±‚ç‚ê‚½‚±‚Æ‚Å‚µ‚å‚¤B‚Ü‚¸AStream Analytics ƒ‚ƒWƒ…[ƒ‹‚ðƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚µ‚Ü‚·B‚±‚Ìƒ‚ƒWƒ…[ƒ‹‚ðŽg—p‚µ‚ÄA•½‹Ï‰·“x‚ðŒvŽZ‚µAƒvƒƒZƒX§Œä’l‚ð’´‚¦‚½ê‡‚ÉƒAƒ‰[ƒg’Ê’m‚ð¶¬‚µ‚Ü‚·B
+ã“ã‚Œã¾ã§ã«ã€Azure IoT Edge ã‚½ãƒªãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ”ãƒ³ã‚°ã‚’è¡Œã£ã¦ã“ã‚‰ã‚ŒãŸã“ã¨ã§ã—ã‚‡ã†ã€‚ã¾ãšã€Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã—ã¾ã™ã€‚ã“ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ä½¿ç”¨ã—ã¦ã€å¹³å‡æ¸©åº¦ã‚’è¨ˆç®—ã—ã€ãƒ—ãƒ­ã‚»ã‚¹åˆ¶å¾¡å€¤ã‚’è¶…ãˆãŸå ´åˆã«ã‚¢ãƒ©ãƒ¼ãƒˆé€šçŸ¥ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
 
-## ŠT—v
+## æ¦‚è¦
 
-‚±‚Ì‰‰K‚Å‚ÍAStream Analytics ƒ‚ƒWƒ…[ƒ‹‚ð Edge ƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚µAƒvƒƒZƒX§Œä’l‚ð’´‚¦‚½ê‡‚ÉƒAƒ‰[ƒg’Ê’m‚ª¶¬‚³‚ê‚é‚æ‚¤‚ÉÝ’è‚µ‚Ü‚·B‚±‚Ìƒ‰ƒ{‚Ì–Ú“I‚É‰ž‚¶‚ÄAIoT Edge ƒfƒoƒCƒX‚Æ‚µ‚Ä\¬‚³‚ê‚½Aì¬Ï‚Ý Linux ƒx[ƒX‚Ì Azure VM ‚ª’ñ‹Ÿ‚³‚ê‚Ü‚·B
+ã“ã®æ¼”ç¿’ã§ã¯ã€Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ Edge ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã—ã€ãƒ—ãƒ­ã‚»ã‚¹åˆ¶å¾¡å€¤ã‚’è¶…ãˆãŸå ´åˆã«ã‚¢ãƒ©ãƒ¼ãƒˆé€šçŸ¥ãŒç”Ÿæˆã•ã‚Œã‚‹ã‚ˆã†ã«è¨­å®šã—ã¾ã™ã€‚ã“ã®ãƒ©ãƒœã®ç›®çš„ã«å¿œã˜ã¦ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã¨ã—ã¦æ§‹æˆã•ã‚ŒãŸã€ä½œæˆæ¸ˆã¿ Linux ãƒ™ãƒ¼ã‚¹ã® Azure VM ãŒæä¾›ã•ã‚Œã¾ã™ã€‚
 
-‚±‚Ì‰‰K‚ÌˆêŠÂ‚Æ‚µ‚ÄAŽŸ‚Ìƒ^ƒXƒN‚ðŽÀs‚µ‚Ü‚·B
+ã“ã®æ¼”ç¿’ã®ä¸€ç’°ã¨ã—ã¦ã€æ¬¡ã®ã‚¿ã‚¹ã‚¯ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚
 
-* IoT Edge VM ‚ÉÚ‘±‚·‚é
-* Edge ƒ‚ƒWƒ…[ƒ‹‚ð Edge ƒfƒoƒCƒX‚É’Ç‰Á‚·‚é
-* Azure Stream Analytics Edge ƒ‚ƒWƒ…[ƒ‹‚ð Edge ƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚·‚é
+* IoT Edge VM ã«æŽ¥ç¶šã™ã‚‹
+* Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ Edge ãƒ‡ãƒã‚¤ã‚¹ã«è¿½åŠ ã™ã‚‹
+* Azure Stream Analytics Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ Edge ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã™ã‚‹
 
-Azure IoT Edge ‚ÍAƒNƒ‰ƒEƒh‚ÅŽÀs‚³‚ê‚éƒNƒ‰ƒEƒh ƒT[ƒrƒX‚ÆAƒfƒoƒCƒX‚ÅŽÀs‚³‚ê‚éƒ‰ƒ“ƒ^ƒCƒ€‚Ì‘g‚Ý‡‚í‚¹‚Å‚·Bƒ‰ƒ“ƒ^ƒCƒ€‚ªŽn“®‚µAƒfƒoƒCƒXã‚Ìƒ[ƒNƒtƒ[‚ðŠÇ—‚µ‚Ü‚·Bƒ[ƒNƒtƒ[‚ÍA“Á’è‚Ì‡˜‚ÅƒŠƒ“ƒN‚µ‚ÄƒGƒ“ƒhƒc[ƒGƒ“ƒh‚ÌƒVƒiƒŠƒI‚ðì¬‚·‚éˆê˜A‚ÌƒRƒ“ƒeƒi[‚Å\¬‚³‚ê‚Ü‚·BIoT Edge ‚Í IoT Hub ‚É‚æ‚Á‚ÄŠÇ—‚³‚ê‚Ü‚·BAzure IoT Edge ‚ðŽg—p‚·‚é‚ÆAƒNƒ‰ƒEƒh ƒT[ƒrƒX‚ðŽg—p‚µ‚ÄŠJ”­‚³‚ê‚½ƒGƒbƒW ƒfƒoƒCƒX‚Åƒ[ƒNƒ[ƒh‚ðŽÀs‚Å‚«‚Ü‚·Bƒ[ƒNƒ[ƒh‚ÍADocker ŒÝŠ·ƒRƒ“ƒeƒi[‚ðŽg—p‚µ‚ÄƒfƒvƒƒC‚³‚ê‚½ƒ‚ƒWƒ…[ƒ‹‚Å‚·Bƒ‚ƒWƒ…[ƒ‹‚ÍAlH’m”\ƒAƒvƒŠƒP[ƒVƒ‡ƒ“AAzure ‚¨‚æ‚ÑƒT[ƒhƒp[ƒeƒB‚ÌƒT[ƒrƒXA‚Ü‚½‚ÍƒrƒWƒlƒX ƒƒWƒbƒN‚Å‚ ‚é‰Â”\«‚ª‚ ‚è‚Ü‚·BÚ‚µ‚¢ IoT Edge ‚Ìà–¾‚É‚Â‚¢‚Ä‚ÍAŽŸ‚ÌƒŠƒ“ƒN‚ÉˆÚ“®‚Å‚«‚Ü‚·B```https://docs.microsoft.com/en-us/azure/iot-edge/about-iot-edge```
+Azure IoT Edge ã¯ã€ã‚¯ãƒ©ã‚¦ãƒ‰ã§å®Ÿè¡Œã•ã‚Œã‚‹ã‚¯ãƒ©ã‚¦ãƒ‰ ã‚µãƒ¼ãƒ“ã‚¹ã¨ã€ãƒ‡ãƒã‚¤ã‚¹ã§å®Ÿè¡Œã•ã‚Œã‚‹ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã®çµ„ã¿åˆã‚ã›ã§ã™ã€‚ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãŒå§‹å‹•ã—ã€ãƒ‡ãƒã‚¤ã‚¹ä¸Šã®ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã‚’ç®¡ç†ã—ã¾ã™ã€‚ãƒ¯ãƒ¼ã‚¯ãƒ•ãƒ­ãƒ¼ã¯ã€ç‰¹å®šã®é †åºã§ãƒªãƒ³ã‚¯ã—ã¦ã‚¨ãƒ³ãƒ‰ãƒ„ãƒ¼ã‚¨ãƒ³ãƒ‰ã®ã‚·ãƒŠãƒªã‚ªã‚’ä½œæˆã™ã‚‹ä¸€é€£ã®ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ã§æ§‹æˆã•ã‚Œã¾ã™ã€‚IoT Edge ã¯ IoT Hub ã«ã‚ˆã£ã¦ç®¡ç†ã•ã‚Œã¾ã™ã€‚Azure IoT Edge ã‚’ä½¿ç”¨ã™ã‚‹ã¨ã€ã‚¯ãƒ©ã‚¦ãƒ‰ ã‚µãƒ¼ãƒ“ã‚¹ã‚’ä½¿ç”¨ã—ã¦é–‹ç™ºã•ã‚ŒãŸã‚¨ãƒƒã‚¸ ãƒ‡ãƒã‚¤ã‚¹ã§ãƒ¯ãƒ¼ã‚¯ãƒ­ãƒ¼ãƒ‰ã‚’å®Ÿè¡Œã§ãã¾ã™ã€‚ãƒ¯ãƒ¼ã‚¯ãƒ­ãƒ¼ãƒ‰ã¯ã€Docker äº’æ›ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ã‚’ä½¿ç”¨ã—ã¦ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚ŒãŸãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã§ã™ã€‚ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ã€äººå·¥çŸ¥èƒ½ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã€Azure ãŠã‚ˆã³ã‚µãƒ¼ãƒ‰ãƒ‘ãƒ¼ãƒ†ã‚£ã®ã‚µãƒ¼ãƒ“ã‚¹ã€ã¾ãŸã¯ãƒ“ã‚¸ãƒã‚¹ ãƒ­ã‚¸ãƒƒã‚¯ã§ã‚ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚è©³ã—ã„ IoT Edge ã®èª¬æ˜Žã«ã¤ã„ã¦ã¯ã€æ¬¡ã®ãƒªãƒ³ã‚¯ã«ç§»å‹•ã§ãã¾ã™ã€‚```https://docs.microsoft.com/en-us/azure/iot-edge/about-iot-edge```
 
-## ƒ\ƒŠƒ…[ƒVƒ‡ƒ“ ƒA[ƒLƒeƒNƒ`ƒƒ
+## ã‚½ãƒªãƒ¥ãƒ¼ã‚·ãƒ§ãƒ³ ã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£
  
-  ![Lab 04 ƒA[ƒLƒeƒNƒ`ƒƒ](media/lab4_architecture.png)
+  ![Lab 04 ã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£](instructions/media/lab4_architecture.png)
 
-### ƒ^ƒXƒN 1: IoT Edge VM ‚ÉÚ‘±‚·‚é
+### ã‚¿ã‚¹ã‚¯ 1: IoT Edge VM ã«æŽ¥ç¶šã™ã‚‹
 
-‚±‚Ìƒ^ƒXƒN‚Å‚ÍAIoT Edge VM ‚ÉÚ‘±‚µAAzure IoT Edge ‚ªƒfƒoƒCƒX‚ÅŽÀs‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ðŠm”F‚µ‚Ü‚·B
+ã“ã®ã‚¿ã‚¹ã‚¯ã§ã¯ã€IoT Edge VM ã«æŽ¥ç¶šã—ã€Azure IoT Edge ãŒãƒ‡ãƒã‚¤ã‚¹ã§å®Ÿè¡Œã•ã‚Œã¦ã„ã‚‹ã‹ã©ã†ã‹ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-1. Azure Portal ƒƒjƒ…[‚ÅA**[ƒŠƒ\[ƒX ƒOƒ‹[ƒv]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. Azure Portal ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã§ã€**[ãƒªã‚½ãƒ¼ã‚¹ ã‚°ãƒ«ãƒ¼ãƒ—]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
  
-1. **iot-{deployment-id}** ƒŠƒ\[ƒX ƒOƒ‹[ƒv‚©‚çAIoT Edge ‰¼‘zƒ}ƒVƒ“ **linuxagentvm-{deployment-id}** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **iot-{deployment-id}** ãƒªã‚½ãƒ¼ã‚¹ ã‚°ãƒ«ãƒ¼ãƒ—ã‹ã‚‰ã€IoT Edge ä»®æƒ³ãƒžã‚·ãƒ³ **linuxagentvm-{deployment-id}** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[ŠT—v]** ƒEƒBƒ“ƒhƒE‚Ìã•”‚É‚ ‚é **[Ú‘±]** ‚ðƒNƒŠƒbƒN‚µ‚Ä‚©‚çA**[SSH]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[æ¦‚è¦]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä¸Šéƒ¨ã«ã‚ã‚‹ **[æŽ¥ç¶š]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‹ã‚‰ã€**[SSH]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Ú‘±]** ƒyƒCƒ“‚Ì **[4.ˆÈ‰º‚ÌƒTƒ“ƒvƒ‹ ƒRƒ}ƒ“ƒh‚ðŽÀs‚µ‚Ä VM ‚ÉÚ‘±]** ‚Ì‰º‚É‚ ‚éƒTƒ“ƒvƒ‹ ƒRƒ}ƒ“ƒh‚ðƒRƒs[‚µ‚Ü‚·B
+1. **[æŽ¥ç¶š]** ãƒšã‚¤ãƒ³ã® **[4.ä»¥ä¸‹ã®ã‚µãƒ³ãƒ—ãƒ« ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã—ã¦ VM ã«æŽ¥ç¶š]** ã®ä¸‹ã«ã‚ã‚‹ã‚µãƒ³ãƒ—ãƒ« ã‚³ãƒžãƒ³ãƒ‰ã‚’ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
 
-    ‚±‚ê‚ÍAVM ‚Ì IP ƒAƒhƒŒƒX‚ÆŠÇ—ŽÒƒ†[ƒU[–¼‚ðŠÜ‚Þ‰¼‘zƒ}ƒVƒ“‚ÉÚ‘±‚·‚é‚½‚ß‚ÉŽg—p‚Å‚«‚éƒTƒ“ƒvƒ‹ SSH ƒRƒ}ƒ“ƒh‚Å‚·BƒRƒ}ƒ“ƒh‚ÍA`ssh demouser@52.170.205.79` ‚Æ“¯—l‚ÉƒtƒH[ƒ}ƒbƒg‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+    ã“ã‚Œã¯ã€VM ã® IP ã‚¢ãƒ‰ãƒ¬ã‚¹ã¨ç®¡ç†è€…ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å«ã‚€ä»®æƒ³ãƒžã‚·ãƒ³ã«æŽ¥ç¶šã™ã‚‹ãŸã‚ã«ä½¿ç”¨ã§ãã‚‹ã‚µãƒ³ãƒ—ãƒ« SSH ã‚³ãƒžãƒ³ãƒ‰ã§ã™ã€‚ã‚³ãƒžãƒ³ãƒ‰ã¯ã€`ssh demouser@52.170.205.79` ã¨åŒæ§˜ã«ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 
-    > **’**: ƒRƒs[‚µ‚½ƒTƒ“ƒvƒ‹ ƒRƒ}ƒ“ƒh‚É‚ÍA**-i <private key path>** ‚ªŠÜ‚Ü‚ê‚Ä‚¢‚Ü‚·BƒeƒLƒXƒg ƒGƒfƒBƒ^[‚ðŽg—p‚µ‚ÄƒRƒ}ƒ“ƒh‚Ì‚»‚Ì•”•ª‚ðíœ‚µ‚Ä‚©‚çAXV‚³‚ê‚½ƒRƒ}ƒ“ƒh‚ðƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚·B
+    > **æ³¨**: ã‚³ãƒ”ãƒ¼ã—ãŸã‚µãƒ³ãƒ—ãƒ« ã‚³ãƒžãƒ³ãƒ‰ã«ã¯ã€**-i <private key path>** ãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚ãƒ†ã‚­ã‚¹ãƒˆ ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ã‚’ä½¿ç”¨ã—ã¦ã‚³ãƒžãƒ³ãƒ‰ã®ãã®éƒ¨åˆ†ã‚’å‰Šé™¤ã—ã¦ã‹ã‚‰ã€æ›´æ–°ã•ã‚ŒãŸã‚³ãƒžãƒ³ãƒ‰ã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
  
-1. **```https://shell.azure.com```** ‚ÉˆÚ“®‚µ‚Ä Azure Cloud Shell‚ðŠJ‚«A**Bash** ‚ð‘I‘ð‚µ‚Ü‚·B
+1. **```https://shell.azure.com```** ã«ç§»å‹•ã—ã¦ Azure Cloud Shellã‚’é–‹ãã€**Bash** ã‚’é¸æŠžã—ã¾ã™ã€‚
 
-1. **[Ú×Ý’è‚ð•\Ž¦]** ‚ðƒNƒŠƒbƒN‚µ‚ÄAŽŸ‚ÌÚ×‚ð“ü—Í‚µ‚Ü‚·B
+1. **[è©³ç´°è¨­å®šã‚’è¡¨ç¤º]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã€æ¬¡ã®è©³ç´°ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
-   * ƒŠƒ\[ƒX ƒOƒ‹[ƒv : **[Šù‘¶‚Ì‚à‚Ì‚ðŽg—p]** -> **iot-{deployment-id}** ‚ð‘I‘ð‚µ‚Ü‚·
-   * ƒXƒgƒŒ[ƒW ƒAƒJƒEƒ“ƒg: **[V‹Kì¬]** ‚ð‘I‘ð‚µA**cloudstore{deployment-id}** ‚Æ“ü—Í‚µ‚Ü‚·
-   * ƒtƒ@ƒCƒ‹‹¤—L: **[V‹Kì¬]** ‚ð‘I‘ð‚µA**blob** ‚Æ“ü—Í‚µ‚Ü‚·
+   * ãƒªã‚½ãƒ¼ã‚¹ ã‚°ãƒ«ãƒ¼ãƒ— : **[æ—¢å­˜ã®ã‚‚ã®ã‚’ä½¿ç”¨]** -> **iot-{deployment-id}** ã‚’é¸æŠžã—ã¾ã™
+   * ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ: **[æ–°è¦ä½œæˆ]** ã‚’é¸æŠžã—ã€**cloudstore{deployment-id}** ã¨å…¥åŠ›ã—ã¾ã™
+   * ãƒ•ã‚¡ã‚¤ãƒ«å…±æœ‰: **[æ–°è¦ä½œæˆ]** ã‚’é¸æŠžã—ã€**blob** ã¨å…¥åŠ›ã—ã¾ã™
    
-     >   **’**: - [ŠÂ‹«‚ÌÚ×] ƒy[ƒW‚©‚ç **deployment-id** ‚ÌÚ×‚ðŽæ“¾‚Å‚«‚Ü‚·B
+     >   **æ³¨**: - [ç’°å¢ƒã®è©³ç´°] ãƒšãƒ¼ã‚¸ã‹ã‚‰ **deployment-id** ã®è©³ç´°ã‚’å–å¾—ã§ãã¾ã™ã€‚
         
-   ![ƒXƒgƒŒ[ƒW ƒAƒJƒEƒ“ƒg‚ðì¬‚·‚é‚½‚ß‚Ì‘I‘ðƒpƒX‚ð•\Ž¦‚µ‚Ä‚¢‚é Azure ƒ|[ƒ^ƒ‹‚ÌƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒgB](media/storageaccount01.png)
+   ![ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹ãŸã‚ã®é¸æŠžãƒ‘ã‚¹ã‚’è¡¨ç¤ºã—ã¦ã„ã‚‹ Azure ãƒãƒ¼ã‚¿ãƒ«ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã€‚](instructions/media/storageaccount01.png)
 
-1. Azure Cloud Shell ‚ÌƒRƒ}ƒ“ƒh ƒvƒƒ“ƒvƒg‚ÅAXV‚µ‚½ `ssh` ƒRƒ}ƒ“ƒh‚ðƒeƒLƒXƒg ƒGƒfƒBƒ^[‚É“\‚è•t‚¯‚ÄA**Enter** ƒL[‚ð‰Ÿ‚µ‚Ü‚·B
+1. Azure Cloud Shell ã®ã‚³ãƒžãƒ³ãƒ‰ ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ã€æ›´æ–°ã—ãŸ `ssh` ã‚³ãƒžãƒ³ãƒ‰ã‚’ãƒ†ã‚­ã‚¹ãƒˆ ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ã«è²¼ã‚Šä»˜ã‘ã¦ã€**Enter** ã‚­ãƒ¼ã‚’æŠ¼ã—ã¾ã™ã€‚
 
-1. **Are you sure you want to continue connecting?** ‚Æ‚¢‚¤ƒƒbƒZ[ƒW‚ª•\Ž¦‚³‚ê‚½‚çA`yes` ‚Æ“ü—Í‚µA**Enter** ƒL[‚ð‰Ÿ‚µ‚Ü‚·B
+1. **Are you sure you want to continue connecting?** ã¨ã„ã†ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¡¨ç¤ºã•ã‚ŒãŸã‚‰ã€`yes` ã¨å…¥åŠ›ã—ã€**Enter** ã‚­ãƒ¼ã‚’æŠ¼ã—ã¾ã™ã€‚
 
-1. ƒpƒXƒ[ƒh‚Ì“ü—Í‚ð‹‚ß‚ç‚ê‚½‚çA**Password.1!!** ‚Æ“ü—Í‚µA**Enter** ƒL[‚ð‰Ÿ‚µ‚Ü‚·B
+1. ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã®å…¥åŠ›ã‚’æ±‚ã‚ã‚‰ã‚ŒãŸã‚‰ã€**Password.1!!** ã¨å…¥åŠ›ã—ã€**Enter** ã‚­ãƒ¼ã‚’æŠ¼ã—ã¾ã™ã€‚
 
-   ![linuxagent ‰¼‘zƒ}ƒVƒ“‚ÖÚ‘±’†B](media/vmlogin.png)
+   ![linuxagent ä»®æƒ³ãƒžã‚·ãƒ³ã¸æŽ¥ç¶šä¸­ã€‚](instructions/media/vmlogin.png)
 
-1. Ú‘±‚·‚é‚ÆAƒ^[ƒ~ƒiƒ‹‚ÌƒRƒ}ƒ“ƒh ƒvƒƒ“ƒvƒg‚ª•Ï‚í‚èALinux VM ‚Ì–¼‘O‚ªŽŸ‚Ì‚æ‚¤‚É•\Ž¦‚³‚ê‚Ü‚·B
+1. æŽ¥ç¶šã™ã‚‹ã¨ã€ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã®ã‚³ãƒžãƒ³ãƒ‰ ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆãŒå¤‰ã‚ã‚Šã€Linux VM ã®åå‰ãŒæ¬¡ã®ã‚ˆã†ã«è¡¨ç¤ºã•ã‚Œã¾ã™ã€‚
 
     ```cmd/sh
     demouser@linuxagentvm-{deployment-id}:~$
     ```
 
-    ‚±‚ê‚É‚æ‚èAÚ‘±‚µ‚Ä‚¢‚é VM ‚ª‚í‚©‚è‚Ü‚·B
+    ã“ã‚Œã«ã‚ˆã‚Šã€æŽ¥ç¶šã—ã¦ã„ã‚‹ VM ãŒã‚ã‹ã‚Šã¾ã™ã€‚
 
-    > **d—v:**Ú‘±‚·‚é‚ÆAEdge VM ‚Ì–¢“K—p‚Ì OS ƒAƒbƒvƒf[ƒg‚É‚Â‚¢‚Ä‚Ì’Ê’m‚ðŽó‚¯Žæ‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B  ‚±‚Ì‚±‚Æ‚Íƒ‰ƒ{‚Ì–Ú“I‚É‰ž‚¶‚Ä–³Ž‹‚µ‚Ä‚¢‚Ü‚·‚ªAŽÀ‰Ò“­ŠÂ‹«‚Å‚ÍAEdge ƒfƒoƒCƒX‚ðí‚ÉÅV‚Ìó‘Ô‚É•Û‚Â•K—v‚ª‚ ‚è‚Ü‚·B
+    > **é‡è¦:**æŽ¥ç¶šã™ã‚‹ã¨ã€Edge VM ã®æœªé©ç”¨ã® OS ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆã«ã¤ã„ã¦ã®é€šçŸ¥ã‚’å—ã‘å–ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚  ã“ã®ã“ã¨ã¯ãƒ©ãƒœã®ç›®çš„ã«å¿œã˜ã¦ç„¡è¦–ã—ã¦ã„ã¾ã™ãŒã€å®Ÿç¨¼åƒç’°å¢ƒã§ã¯ã€Edge ãƒ‡ãƒã‚¤ã‚¹ã‚’å¸¸ã«æœ€æ–°ã®çŠ¶æ…‹ã«ä¿ã¤å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
 
-1. Azure IoT Edge ƒ‰ƒ“ƒ^ƒCƒ€‚ª VM ‚ÉƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚·‚é‚É‚ÍAŽŸ‚ÌƒRƒ}ƒ“ƒh‚ðŽÀs‚µ‚Ü‚·B
+1. Azure IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãŒ VM ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã™ã‚‹ã«ã¯ã€æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚
 
     ```cmd/sh
     iotedge version
     ```
 
-    ‚±‚ÌƒRƒ}ƒ“ƒh‚ÍA‰¼‘zƒ}ƒVƒ“‚ÉŒ»ÝƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚é Azure IoT Edge ƒ‰ƒ“ƒ^ƒCƒ€‚Ìƒo[ƒWƒ‡ƒ“‚ðo—Í‚µ‚Ü‚·B
-    IoT Edge ƒfƒoƒCƒX‚É‚ÍAIoT Edge ƒ‰ƒ“ƒ^ƒCƒ€‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ä‚¢‚Ü‚·BIoT Edge ƒ‰ƒ“ƒ^ƒCƒ€‚ÍAƒfƒoƒCƒX‚ð IoT Edge ƒfƒoƒCƒX‚É•Ï‚¦‚éƒvƒƒOƒ‰ƒ€‚ÌƒRƒŒƒNƒVƒ‡ƒ“‚Å‚·BIoT Edge ƒ‰ƒ“ƒ^ƒCƒ€ ƒRƒ“ƒ|[ƒlƒ“ƒg‚É‚æ‚èAW‡“I‚ÉAIoT Edge ƒfƒoƒCƒX‚ÍƒGƒbƒW‚ÅŽÀs‚·‚éƒR[ƒh‚ðŽóM‚µ‚ÄAŒ‹‰Ê‚ð IoT Hub ‚Æ’ÊM‚Å‚«‚Ü‚·B
+    ã“ã®ã‚³ãƒžãƒ³ãƒ‰ã¯ã€ä»®æƒ³ãƒžã‚·ãƒ³ã«ç¾åœ¨ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã‚‹ Azure IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å‡ºåŠ›ã—ã¾ã™ã€‚
+    IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã«ã¯ã€IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¦ã„ã¾ã™ã€‚IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã¯ã€ãƒ‡ãƒã‚¤ã‚¹ã‚’ IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã«å¤‰ãˆã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã®ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ã§ã™ã€‚IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ  ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã«ã‚ˆã‚Šã€é›†åˆçš„ã«ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã¯ã‚¨ãƒƒã‚¸ã§å®Ÿè¡Œã™ã‚‹ã‚³ãƒ¼ãƒ‰ã‚’å—ä¿¡ã—ã¦ã€çµæžœã‚’ IoT Hub ã¨é€šä¿¡ã§ãã¾ã™ã€‚
 
-### ƒ^ƒXƒN 2: Edge ƒ‚ƒWƒ…[ƒ‹‚ð Edge ƒfƒoƒCƒX‚É’Ç‰Á‚·‚é
+### ã‚¿ã‚¹ã‚¯ 2: Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ Edge ãƒ‡ãƒã‚¤ã‚¹ã«è¿½åŠ ã™ã‚‹
 
-‚±‚Ì‰‰K‚Å‚ÍASimulated Temperature Sensor ‚ðƒJƒXƒ^ƒ€ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚Æ‚µ‚Ä’Ç‰Á‚µA‚»‚ê‚ð“WŠJ‚µ‚Ä IoT Edge ƒfƒoƒCƒX‚ÅŽÀs‚µ‚Ü‚·B
+ã“ã®æ¼”ç¿’ã§ã¯ã€Simulated Temperature Sensor ã‚’ã‚«ã‚¹ã‚¿ãƒ  IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ã—ã¦è¿½åŠ ã—ã€ãã‚Œã‚’å±•é–‹ã—ã¦ IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã§å®Ÿè¡Œã—ã¾ã™ã€‚
 
-IoT Edge ƒ‚ƒWƒ…[ƒ‹‚ÍAƒRƒ“ƒeƒi[‚Æ‚µ‚ÄŽÀ‘•‚³‚ê‚éŽÀs‰Â”\ƒpƒbƒP[ƒW‚Å‚·B
+IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ã€ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ã¨ã—ã¦å®Ÿè£…ã•ã‚Œã‚‹å®Ÿè¡Œå¯èƒ½ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã§ã™ã€‚
 
-IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼ÚŽÀs‚Å‚«‚Ü‚·BIoT Edge ƒ‚ƒWƒ…[ƒ‹‚ÍAIoT Edge ‚É‚æ‚Á‚ÄŠÇ—‚³‚ê‚éÅ¬‚ÌŒvŽZ’PˆÊ‚Å‚·BIoT Edge ƒ‚ƒWƒ…[ƒ‹‚ðŽg—p‚·‚é‚ÆAƒNƒ‰ƒEƒh‚Å‚Í‚È‚­ƒfƒoƒCƒXã‚Ìƒf[ƒ^‚ð•ªÍ‚Å‚«‚Ü‚·Bƒ[ƒNƒ[ƒh‚Ìˆê•”‚ðƒGƒbƒW‚ÉˆÚ“®‚·‚é‚±‚Æ‚ÅAƒfƒoƒCƒX‚ÍƒNƒ‰ƒEƒh‚Ö‚ÌƒƒbƒZ[ƒW‚Ì‘—M‚É”ï‚â‚·ŽžŠÔ‚ð’Zk‚µAƒCƒxƒ“ƒg‚É‚æ‚èv‘¬‚É‘Î‰ž‚Å‚«‚Ü‚·B
+IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‹ã‚‰ã€ã‚¯ãƒ©ã‚¦ãƒ‰ ãƒ¯ãƒ¼ã‚¯ãƒ­ãƒ¼ãƒ‰ã‚’ãƒ‡ãƒ—ãƒ­ã‚¤ã—ã¦ã€IoT ãƒ‡ãƒã‚¤ã‚¹ã§ç›´æŽ¥å®Ÿè¡Œã§ãã¾ã™ã€‚IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ã€IoT Edge ã«ã‚ˆã£ã¦ç®¡ç†ã•ã‚Œã‚‹æœ€å°ã®è¨ˆç®—å˜ä½ã§ã™ã€‚IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ä½¿ç”¨ã™ã‚‹ã¨ã€ã‚¯ãƒ©ã‚¦ãƒ‰ã§ã¯ãªããƒ‡ãƒã‚¤ã‚¹ä¸Šã®ãƒ‡ãƒ¼ã‚¿ã‚’åˆ†æžã§ãã¾ã™ã€‚ãƒ¯ãƒ¼ã‚¯ãƒ­ãƒ¼ãƒ‰ã®ä¸€éƒ¨ã‚’ã‚¨ãƒƒã‚¸ã«ç§»å‹•ã™ã‚‹ã“ã¨ã§ã€ãƒ‡ãƒã‚¤ã‚¹ã¯ã‚¯ãƒ©ã‚¦ãƒ‰ã¸ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®é€ä¿¡ã«è²»ã‚„ã™æ™‚é–“ã‚’çŸ­ç¸®ã—ã€ã‚¤ãƒ™ãƒ³ãƒˆã«ã‚ˆã‚Šè¿…é€Ÿã«å¯¾å¿œã§ãã¾ã™ã€‚
 
-1. •K—v‚É‰ž‚¶‚ÄAAzure ƒAƒJƒEƒ“ƒg‚ÌŽ‘Šiî•ñ‚ðŽg—p‚µ‚Ä Azure Portal ‚ÉƒƒOƒCƒ“‚µ‚Ü‚·B
+1. å¿…è¦ã«å¿œã˜ã¦ã€Azure ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®è³‡æ ¼æƒ…å ±ã‚’ä½¿ç”¨ã—ã¦ Azure Portal ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚
  
-1. [ƒŠƒ\[ƒX] ƒOƒ‹[ƒv ƒ^ƒCƒ‹‚ÅAIoT Hub ‚ðŠJ‚­‚É‚ÍA**iothub-{deployment-id}** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. [ãƒªã‚½ãƒ¼ã‚¹] ã‚°ãƒ«ãƒ¼ãƒ— ã‚¿ã‚¤ãƒ«ã§ã€IoT Hub ã‚’é–‹ãã«ã¯ã€**iothub-{deployment-id}** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **IoT Hub** ƒuƒŒ[ƒh‚Ì¶‘¤‚É‚ ‚é **[Automatic Device Management (Ž©“®ƒfƒoƒCƒXŠÇ—)]** ‚Ì‰º‚ÅA**[IoT Edge]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **IoT Hub** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®å·¦å´ã«ã‚ã‚‹ **[Automatic Device Management (è‡ªå‹•ãƒ‡ãƒã‚¤ã‚¹ç®¡ç†)]** ã®ä¸‹ã§ã€**[IoT Edge]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. IoT Edge ƒfƒoƒCƒX‚ÌƒŠƒXƒg‚ÅA**turbine-06** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã®ãƒªã‚¹ãƒˆã§ã€**turbine-06** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **turbine-06** ƒuƒŒ[ƒh‚ÅA**[ƒ‚ƒWƒ…[ƒ‹]** ƒ^ƒu‚ÉƒfƒoƒCƒX—p‚ÉŒ»Ý\¬‚³‚ê‚Ä‚¢‚éƒ‚ƒWƒ…[ƒ‹‚ÌƒŠƒXƒg‚ª•\Ž¦‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B
+1. **turbine-06** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã§ã€**[ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã‚¿ãƒ–ã«ãƒ‡ãƒã‚¤ã‚¹ç”¨ã«ç¾åœ¨æ§‹æˆã•ã‚Œã¦ã„ã‚‹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒªã‚¹ãƒˆãŒè¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
 
-    Œ»ÝAIoT Edge ƒfƒoƒCƒX‚ÍAIoT Edge ƒ‰ƒ“ƒ^ƒCƒ€‚Ìˆê•”‚Å‚ ‚é Edge ƒG[ƒWƒFƒ“ƒg (`$edgeAgent`) ƒ‚ƒWƒ…[ƒ‹‚Æ Edge Hub (`$edgeHub`) ƒ‚ƒWƒ…[ƒ‹‚Ì‚Ý‚Å\¬‚³‚ê‚Ä‚¢‚Ü‚·B
+    ç¾åœ¨ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã¯ã€IoT Edge ãƒ©ãƒ³ã‚¿ã‚¤ãƒ ã®ä¸€éƒ¨ã§ã‚ã‚‹ Edge ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆ (`$edgeAgent`) ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ Edge Hub (`$edgeHub`) ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã¿ã§æ§‹æˆã•ã‚Œã¦ã„ã¾ã™ã€‚
 
-1. **turbine-06** ƒuƒŒ[ƒh‚Ìã•”‚É‚ ‚é **[ƒ‚ƒWƒ…[ƒ‹‚ðÝ’è]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **turbine-06** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸Šéƒ¨ã«ã‚ã‚‹ **[ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’è¨­å®š]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]** ƒuƒŒ[ƒh‚ÅA**IoT Edge Modules** ƒZƒNƒVƒ‡ƒ“‚ðŒ©‚Â‚¯‚Ü‚·B
+1. **[Set modules on device: turbine-06]** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã§ã€**IoT Edge Modules** ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã‚’è¦‹ã¤ã‘ã¾ã™ã€‚
 
-1. **[IoT Edge ƒ‚ƒWƒ…[ƒ‹]** ‚Ì‰º‚ÅA**[’Ç‰Á]** ‚ðƒNƒŠƒbƒN‚µ‚Ä‚©‚çA**[IoT Edge ƒ‚ƒWƒ…[ƒ‹]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã®ä¸‹ã§ã€**[è¿½åŠ ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‹ã‚‰ã€**[IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Add IoT Edge Module]** ƒEƒBƒ“ƒhƒE‚Ì **[IoT Edge Module Name]** ‚Ì‰º‚ÉA**turbinesensor** ‚Æ“ü—Í‚µ‚Ü‚·
+1. **[Add IoT Edge Module]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã® **[IoT Edge Module Name]** ã®ä¸‹ã«ã€**turbinesensor** ã¨å…¥åŠ›ã—ã¾ã™
 
-    ƒJƒXƒ^ƒ€ ƒ‚ƒWƒ…[ƒ‹‚Éuturbinesensorv‚Æ‚¢‚¤–¼‘O‚ð•t‚¯‚Ü‚·
+    ã‚«ã‚¹ã‚¿ãƒ  ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã«ã€Œturbinesensorã€ã¨ã„ã†åå‰ã‚’ä»˜ã‘ã¾ã™
 
-1. **[ƒCƒ[ƒW URI]** ‚ÅA**asaedgedockerhubtest/asa-edge-test-module:simulated-temperature-sensor** ‚Æ“ü—Í‚µ‚Ü‚·B
+1. **[ã‚¤ãƒ¡ãƒ¼ã‚¸ URI]** ã§ã€**asaedgedockerhubtest/asa-edge-test-module:simulated-temperature-sensor** ã¨å…¥åŠ›ã—ã¾ã™ã€‚
 
-    > **’**: ‚±‚ÌƒCƒ[ƒW‚ÍA‚±‚ÌƒeƒXƒg ƒVƒiƒŠƒI‚ðƒTƒ|[ƒg‚·‚é‚½‚ß‚É»•iƒOƒ‹[ƒv‚É‚æ‚Á‚Ä’ñ‹Ÿ‚³‚ê‚½ Docker Hub ã‚ÌŒöŠJƒCƒ[ƒW‚Å‚·B
+    > **æ³¨**: ã“ã®ã‚¤ãƒ¡ãƒ¼ã‚¸ã¯ã€ã“ã®ãƒ†ã‚¹ãƒˆ ã‚·ãƒŠãƒªã‚ªã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ãŸã‚ã«è£½å“ã‚°ãƒ«ãƒ¼ãƒ—ã«ã‚ˆã£ã¦æä¾›ã•ã‚ŒãŸ Docker Hub ä¸Šã®å…¬é–‹ã‚¤ãƒ¡ãƒ¼ã‚¸ã§ã™ã€‚
 
-1. ‘I‘ð‚µ‚½ƒ^ƒu‚ð•ÏX‚·‚é‚É‚ÍA**[Module Twin Settings (ƒ‚ƒWƒ…[ƒ‹ ƒcƒCƒ“Ý’è)]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. é¸æŠžã—ãŸã‚¿ãƒ–ã‚’å¤‰æ›´ã™ã‚‹ã«ã¯ã€**[Module Twin Settings (ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« ãƒ„ã‚¤ãƒ³è¨­å®š)]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. ƒ‚ƒWƒ…[ƒ‹ ƒcƒCƒ“‚É•K—v‚ÈƒvƒƒpƒeƒB‚ðŽw’è‚·‚é‚É‚ÍAŽŸ‚Ì JSON ‚ð“ü—Í‚µ‚Ü‚·B
+1. ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« ãƒ„ã‚¤ãƒ³ã«å¿…è¦ãªãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’æŒ‡å®šã™ã‚‹ã«ã¯ã€æ¬¡ã® JSON ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
     ```json
     {
@@ -130,26 +130,26 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     }
     ```
 
-    ‚±‚Ì JSON ‚ÍAƒ‚ƒWƒ…[ƒ‹ ƒcƒCƒ“‚Ì–Ú“I‚ÌƒvƒƒpƒeƒB‚ðÝ’è‚·‚é‚±‚Æ‚Å Edge ƒ‚ƒWƒ…[ƒ‹‚ð\¬‚µ‚Ü‚·B
+    ã“ã® JSON ã¯ã€ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« ãƒ„ã‚¤ãƒ³ã®ç›®çš„ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’è¨­å®šã™ã‚‹ã“ã¨ã§ Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’æ§‹æˆã—ã¾ã™ã€‚
 
-1. ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚é **[’Ç‰Á]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[è¿½åŠ ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]** ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚é **[Next: Routes >]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[Set modules on device: turbine-06]** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[Next: Routes >]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. Šù’èƒ‹[ƒg‚ª‚·‚Å‚ÉÝ’è‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. æ—¢å®šãƒ«ãƒ¼ãƒˆãŒã™ã§ã«è¨­å®šã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-    * –¼‘O: **route**
-    * ’l: `FROM /messages/* INTO $upstream`
+    * åå‰: **route**
+    * å€¤: `FROM /messages/* INTO $upstream`
 
-    ‚±‚Ìƒ‹[ƒg‚ÍAIoT Edge ƒfƒoƒCƒXã‚Ì‚·‚×‚Ä‚Ìƒ‚ƒWƒ…[ƒ‹‚©‚ç IoT Hub ‚É‚·‚×‚Ä‚ÌƒƒbƒZ[ƒW‚ð‘—M‚µ‚Ü‚·
+    ã“ã®ãƒ«ãƒ¼ãƒˆã¯ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ä¸Šã®ã™ã¹ã¦ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‹ã‚‰ IoT Hub ã«ã™ã¹ã¦ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã—ã¾ã™
 
-1. **[Review + create]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[Review + create]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Deployment]** ‚ÅA•\Ž¦‚³‚ê‚½ƒfƒvƒƒC ƒ}ƒjƒtƒFƒXƒg‚ð­‚µ‚ÌŽžŠÔ‚ðŽæ‚Á‚ÄŠm”F‚µ‚Ü‚·B 
+1. **[Deployment]** ã§ã€è¡¨ç¤ºã•ã‚ŒãŸãƒ‡ãƒ—ãƒ­ã‚¤ ãƒžãƒ‹ãƒ•ã‚§ã‚¹ãƒˆã‚’å°‘ã—ã®æ™‚é–“ã‚’å–ã£ã¦ç¢ºèªã—ã¾ã™ã€‚ 
 
-    ‚²——‚Ì‚Æ‚¨‚èAIoT Edge ƒfƒoƒCƒX‚ÌƒfƒvƒƒC ƒ}ƒjƒtƒFƒXƒg‚Í JSON ‚Æ‚µ‚ÄƒtƒH[ƒ}ƒbƒg‚³‚ê‚Ä‚¢‚é‚½‚ßA”ñí‚É“Ç‚Ý‚â‚·‚­‚È‚Á‚Ä‚¢‚Ü‚·B
+    ã”è¦§ã®ã¨ãŠã‚Šã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã®ãƒ‡ãƒ—ãƒ­ã‚¤ ãƒžãƒ‹ãƒ•ã‚§ã‚¹ãƒˆã¯ JSON ã¨ã—ã¦ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã•ã‚Œã¦ã„ã‚‹ãŸã‚ã€éžå¸¸ã«èª­ã¿ã‚„ã™ããªã£ã¦ã„ã¾ã™ã€‚
 
-    `properties.desired` ƒZƒNƒVƒ‡ƒ“‚Ì‰º‚É‚ÍAIoT Edge ƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚³‚ê‚é IoT Edge ƒ‚ƒWƒ…[ƒ‹‚ðéŒ¾‚·‚é `modules` ƒZƒNƒVƒ‡ƒ“‚ª‚ ‚è‚Ü‚·B‚±‚ê‚É‚ÍAƒRƒ“ƒeƒi[ ƒŒƒWƒXƒgƒŠ‚ÌŽ‘Šiî•ñ‚ðŠÜ‚Þ‚·‚×‚Ä‚Ìƒ‚ƒWƒ…[ƒ‹‚ÌƒCƒ[ƒW URI ‚ªŠÜ‚Ü‚ê‚Ü‚·B
+    `properties.desired` ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®ä¸‹ã«ã¯ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã‚‹ IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’å®£è¨€ã™ã‚‹ `modules` ã‚»ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚ã‚Šã¾ã™ã€‚ã“ã‚Œã«ã¯ã€ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ ãƒ¬ã‚¸ã‚¹ãƒˆãƒªã®è³‡æ ¼æƒ…å ±ã‚’å«ã‚€ã™ã¹ã¦ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚¤ãƒ¡ãƒ¼ã‚¸ URI ãŒå«ã¾ã‚Œã¾ã™ã€‚
 
     ```json
     {
@@ -169,7 +169,7 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
                         },
     ```
 
-    JSON ‚Ì‰º•”‚É‚ÍAEdge Hub ‚É•K—v‚ÈƒvƒƒpƒeƒB‚ðŠÜ‚Þ **$edgeHub** ƒZƒNƒVƒ‡ƒ“‚ª‚ ‚è‚Ü‚·B‚±‚ÌƒZƒNƒVƒ‡ƒ“‚É‚ÍAƒ‚ƒWƒ…[ƒ‹ŠÔ‚¨‚æ‚Ñ IoT Hub ‚Ö‚ÌƒCƒxƒ“ƒg‚Ìƒ‹[ƒeƒBƒ“ƒO‚Ì‚½‚ß‚Ìƒ‹[ƒeƒBƒ“ƒO\¬‚àŠÜ‚Ü‚ê‚Ä‚¢‚Ü‚·B
+    JSON ã®ä¸‹éƒ¨ã«ã¯ã€Edge Hub ã«å¿…è¦ãªãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’å«ã‚€ **$edgeHub** ã‚»ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚ã‚Šã¾ã™ã€‚ã“ã®ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã¯ã€ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«é–“ãŠã‚ˆã³ IoT Hub ã¸ã®ã‚¤ãƒ™ãƒ³ãƒˆã®ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã®ãŸã‚ã®ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°æ§‹æˆã‚‚å«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
 
     ```json
         "$edgeHub": {
@@ -185,7 +185,7 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
         },
     ```
 
-    JSON ‚Ì‚³‚ç‚É‰º‚É‚ÍA**turbinesensor** ƒ‚ƒWƒ…[ƒ‹‚ÌƒZƒNƒVƒ‡ƒ“‚ª‚ ‚è‚Ü‚·B‚±‚±‚ÅA`properties.desired` ƒZƒNƒVƒ‡ƒ“‚É‚ÍAEdge ƒ‚ƒWƒ…[ƒ‹‚Ì\¬‚É•K—v‚ÈƒvƒƒpƒeƒB‚ªŠÜ‚Ü‚ê‚Ä‚¢‚Ü‚·B
+    JSON ã®ã•ã‚‰ã«ä¸‹ã«ã¯ã€**turbinesensor** ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚»ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚ã‚Šã¾ã™ã€‚ã“ã“ã§ã€`properties.desired` ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«ã¯ã€Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®æ§‹æˆã«å¿…è¦ãªãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒå«ã¾ã‚Œã¦ã„ã¾ã™ã€‚
 
     ```json
                 },
@@ -205,31 +205,31 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
         }
     ```
 
-1. ƒfƒoƒCƒX‚Ìƒ‚ƒWƒ…[ƒ‹‚ÌÝ’è‚ðI—¹‚·‚é‚É‚ÍAƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚é **[ì¬]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ãƒ‡ãƒã‚¤ã‚¹ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®è¨­å®šã‚’çµ‚äº†ã™ã‚‹ã«ã¯ã€ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[ä½œæˆ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **turbine-06** ƒuƒŒ[ƒh‚Ì **[Modules]** ‚Ì‰º‚ÅA**turbinesensor** ‚ªƒŠƒXƒg‚³‚ê‚é‚æ‚¤‚É‚È‚Á‚½‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. **turbine-06** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã® **[Modules]** ã®ä¸‹ã§ã€**turbinesensor** ãŒãƒªã‚¹ãƒˆã•ã‚Œã‚‹ã‚ˆã†ã«ãªã£ãŸã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-    > **’**: ‰‚ß‚ÄƒŠƒXƒg‚³‚ê‚½ƒ‚ƒWƒ…[ƒ‹‚ð•\Ž¦‚·‚é‚É‚ÍA**[Ä“Ç‚Ýž‚Ý]** ‚ðƒNƒŠƒbƒN‚·‚é•K—v‚ª‚ ‚éê‡‚ª‚ ‚è‚Ü‚·B
+    > **æ³¨**: åˆã‚ã¦ãƒªã‚¹ãƒˆã•ã‚ŒãŸãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’è¡¨ç¤ºã™ã‚‹ã«ã¯ã€**[å†èª­ã¿è¾¼ã¿]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã™ã‚‹å¿…è¦ãŒã‚ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
 
-    **turbinesensor** ‚Ì RUNTIME STATUS ‚ª•ñ‚³‚ê‚Ä‚¢‚È‚¢‚±‚Æ‚É‹C•t‚­ê‡‚ª‚ ‚è‚Ü‚·B
+    **turbinesensor** ã® RUNTIME STATUS ãŒå ±å‘Šã•ã‚Œã¦ã„ãªã„ã“ã¨ã«æ°—ä»˜ãå ´åˆãŒã‚ã‚Šã¾ã™ã€‚
 
-1. ƒuƒŒ[ƒh‚Ìã•”‚ÅA**[Ä“Ç‚Ýž‚Ý]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸Šéƒ¨ã§ã€**[å†èª­ã¿è¾¼ã¿]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **turbinesensor** ƒ‚ƒWƒ…[ƒ‹‚Ì **RUNTIME STATUS** ‚ª **running** ‚ÉÝ’è‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. **turbinesensor** ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã® **RUNTIME STATUS** ãŒ **running** ã«è¨­å®šã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-    ‚»‚ê‚Å‚à’l‚ª•ñ‚³‚ê‚È‚¢ê‡‚ÍA‚µ‚Î‚ç‚­‘Ò‚Á‚Ä‚©‚çAƒuƒŒ[ƒh‚ðÄ“xAÄ“Ç‚Ýž‚Ý‚µ‚Ä‚­‚¾‚³‚¢B
+    ãã‚Œã§ã‚‚å€¤ãŒå ±å‘Šã•ã‚Œãªã„å ´åˆã¯ã€ã—ã°ã‚‰ãå¾…ã£ã¦ã‹ã‚‰ã€ãƒ–ãƒ¬ãƒ¼ãƒ‰ã‚’å†åº¦ã€å†èª­ã¿è¾¼ã¿ã—ã¦ãã ã•ã„ã€‚
  
-1. Cloud Shell ƒZƒbƒVƒ‡ƒ“‚ðŠJ‚«‚Ü‚· (‚Ü‚¾ŠJ‚¢‚Ä‚¢‚È‚¢ê‡)B
+1. Cloud Shell ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’é–‹ãã¾ã™ (ã¾ã é–‹ã„ã¦ã„ãªã„å ´åˆ)ã€‚
 
-    `vm-iot-edge-{deployment-id}` ‰¼‘zƒ}ƒVƒ“‚ÉÚ‘±‚µ‚È‚­‚È‚Á‚½ê‡‚ÍAˆÈ‘O‚Æ“¯—l‚É **SSH** ‚ðŽg—p‚µ‚ÄÚ‘±‚µ‚Ü‚·B
+    `vm-iot-edge-{deployment-id}` ä»®æƒ³ãƒžã‚·ãƒ³ã«æŽ¥ç¶šã—ãªããªã£ãŸå ´åˆã¯ã€ä»¥å‰ã¨åŒæ§˜ã« **SSH** ã‚’ä½¿ç”¨ã—ã¦æŽ¥ç¶šã—ã¾ã™ã€‚
 
-1. Cloud Shell ƒRƒ}ƒ“ƒh ƒvƒƒ“ƒvƒg‚ÅAIoT Edge ƒfƒoƒCƒX‚ÅŒ»ÝŽÀs‚µ‚Ä‚¢‚éƒ‚ƒWƒ…[ƒ‹‚ðƒŠƒXƒg‚·‚é‚É‚ÍAŽŸ‚ÌƒRƒ}ƒ“ƒh‚ð“ü—Í‚µ‚Ü‚·B
+1. Cloud Shell ã‚³ãƒžãƒ³ãƒ‰ ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã§ç¾åœ¨å®Ÿè¡Œã—ã¦ã„ã‚‹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ãƒªã‚¹ãƒˆã™ã‚‹ã«ã¯ã€æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
     ```cmd/sh
     iotedge list
     ```
 
-1. ƒRƒ}ƒ“ƒh‚Ìo—Í‚ÍŽŸ‚Ì‚æ‚¤‚É‚È‚è‚Ü‚·B 
+1. ã‚³ãƒžãƒ³ãƒ‰ã®å‡ºåŠ›ã¯æ¬¡ã®ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚ 
 
     ```cmd/sh
     demouser@linuxagentvm-{deployment-id}:~$ iotedge list
@@ -239,15 +239,15 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     turbinesensor    running          Up 34 seconds    asaedgedockerhubtest/asa-edge-test-module:simulated-temperature-sensor
     ```
 
-    ŽÀs’†‚Ìƒ‚ƒWƒ…[ƒ‹‚Ì 1 ‚Â‚Æ‚µ‚Ä `turbinesensor` ‚ªƒŠƒXƒg‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+    å®Ÿè¡Œä¸­ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã® 1 ã¤ã¨ã—ã¦ `turbinesensor` ãŒãƒªã‚¹ãƒˆã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-1. ƒ‚ƒWƒ…[ƒ‹ ƒƒO‚ð•\Ž¦‚·‚é‚É‚ÍAŽŸ‚ÌƒRƒ}ƒ“ƒh‚ð“ü—Í‚µ‚Ü‚·B
+1. ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« ãƒ­ã‚°ã‚’è¡¨ç¤ºã™ã‚‹ã«ã¯ã€æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
     ```cmd/sh
     iotedge logs turbinesensor
     ```
 
-    ƒRƒ}ƒ“ƒh‚Ìo—Í‚ÍŽŸ‚Ì‚æ‚¤‚É‚È‚è‚Ü‚·B
+    ã‚³ãƒžãƒ³ãƒ‰ã®å‡ºåŠ›ã¯æ¬¡ã®ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
 
     ```cmd/sh
     demouser@linuxagentvm-{deployment-id}:~$ iotedge logs turbinesensor
@@ -256,109 +256,109 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     11/14/2019 18:05:03 - Send Json Event : {"machine":{"temperature":41.999999999999922,"pressure":1.0189397735244012},"ambient":{"temperature":20.715225311096397,"humidity":26},"timeCreated":"2019-11-14T18:05:03.8811372Z"}
     ```
 
-    ”CˆÓ‚Ì Edge ƒ‚ƒWƒ…[ƒ‹‚Ìƒ‚ƒWƒ…[ƒ‹ ƒƒO‚ð•\Ž¦‚·‚é‚É‚ÍA`iotedge logs` ƒRƒ}ƒ“ƒh‚ðŽg—p‚Å‚«‚Ü‚·B
+    ä»»æ„ã® Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ« ãƒ­ã‚°ã‚’è¡¨ç¤ºã™ã‚‹ã«ã¯ã€`iotedge logs` ã‚³ãƒžãƒ³ãƒ‰ã‚’ä½¿ç”¨ã§ãã¾ã™ã€‚
 
-1. Simulated Temperature Sensor ƒ‚ƒWƒ…[ƒ‹‚ÍA500 ŒÂ‚ÌƒƒbƒZ[ƒW‚ð‘—M‚µ‚½Œã‚É’âŽ~‚µ‚Ü‚·BŽŸ‚ÌƒRƒ}ƒ“ƒh‚ðŽÀs‚·‚é‚ÆAÄ‹N“®‚Å‚«‚Ü‚·B
+1. Simulated Temperature Sensor ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ã€500 å€‹ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ä¿¡ã—ãŸå¾Œã«åœæ­¢ã—ã¾ã™ã€‚æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã¨ã€å†èµ·å‹•ã§ãã¾ã™ã€‚
 
     ```cmd/sh
     iotedge restart turbinesensor
     ```
 
-    ¡‚·‚®ƒ‚ƒWƒ…[ƒ‹‚ðÄ‹N“®‚·‚é•K—v‚Í‚ ‚è‚Ü‚¹‚ñ‚ªAŒã‚ÅƒeƒŒƒƒgƒŠ‚Ì‘—M‚ª’âŽ~‚µ‚½ê‡‚ÍACloud Shell ‚É–ß‚èAEdge VM ‚É SSH ‚ÅÚ‘±‚µA‚±‚ÌƒRƒ}ƒ“ƒh‚ðŽÀs‚µ‚ÄƒŠƒZƒbƒg‚µ‚Ü‚·BƒŠƒZƒbƒg‚³‚ê‚é‚ÆAƒ‚ƒWƒ…[ƒ‹‚ÍƒeƒŒƒƒgƒŠ‚Ì‘—M‚ðÄŠJ‚µ‚Ü‚·B
+    ä»Šã™ããƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’å†èµ·å‹•ã™ã‚‹å¿…è¦ã¯ã‚ã‚Šã¾ã›ã‚“ãŒã€å¾Œã§ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªã®é€ä¿¡ãŒåœæ­¢ã—ãŸå ´åˆã¯ã€Cloud Shell ã«æˆ»ã‚Šã€Edge VM ã« SSH ã§æŽ¥ç¶šã—ã€ã“ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã—ã¦ãƒªã‚»ãƒƒãƒˆã—ã¾ã™ã€‚ãƒªã‚»ãƒƒãƒˆã•ã‚Œã‚‹ã¨ã€ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªã®é€ä¿¡ã‚’å†é–‹ã—ã¾ã™ã€‚
 
-### ƒ^ƒXƒN 3: Azure Stream Analytics Edge ƒ‚ƒWƒ…[ƒ‹‚ð IoT Edge ƒ‚ƒWƒ…[ƒ‹‚Æ‚µ‚ÄƒfƒvƒƒC‚·‚é
+### ã‚¿ã‚¹ã‚¯ 3: Azure Stream Analytics Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ã—ã¦ãƒ‡ãƒ—ãƒ­ã‚¤ã™ã‚‹
 
-**turbinesensor** ƒ‚ƒWƒ…[ƒ‹‚ª IoT Edge ƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚³‚ê‚ÄŽÀs‚³‚ê‚½‚Ì‚ÅAIoT Hub ‚É‘—M‚·‚é‘O‚ÉAIoT Edge ƒfƒoƒCƒXŽ©‘Ì‚ÅƒƒbƒZ[ƒW‚ðˆ—‚Å‚«‚é Stream Analytics ƒ‚ƒWƒ…[ƒ‹‚ð’Ç‰Á‚Å‚«‚Ü‚·B
+**turbinesensor** ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒ IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã¦å®Ÿè¡Œã•ã‚ŒãŸã®ã§ã€IoT Hub ã«é€ä¿¡ã™ã‚‹å‰ã«ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹è‡ªä½“ã§ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡¦ç†ã§ãã‚‹ Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’è¿½åŠ ã§ãã¾ã™ã€‚
 
-#### Stream Analytics ƒWƒ‡ƒu‚ðŠm”F‚·‚é
+#### Stream Analytics ã‚¸ãƒ§ãƒ–ã‚’ç¢ºèªã™ã‚‹
 
-1. ƒŠƒ\[ƒX ƒOƒ‹[ƒv ƒ^ƒCƒ‹‚ÅA**iot-{deployment-id}** ‚ðƒNƒŠƒbƒN‚µA**iotedge-streamjob-{deployment-id}** ‚Æ‚¢‚¤ Stream Analytics ƒWƒ‡ƒu‚ð‘I‘ð‚µ‚Ü‚·B
+1. ãƒªã‚½ãƒ¼ã‚¹ ã‚°ãƒ«ãƒ¼ãƒ— ã‚¿ã‚¤ãƒ«ã§ã€**iot-{deployment-id}** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã€**iotedge-streamjob-{deployment-id}** ã¨ã„ã† Stream Analytics ã‚¸ãƒ§ãƒ–ã‚’é¸æŠžã—ã¾ã™ã€‚
 
-1. ŽŸ‚ÉAƒuƒŒ[ƒh‚Ì¶‘¤‚É‚ ‚é **[ƒWƒ‡ƒu ƒgƒ|ƒƒW]** ‚ÅA**[“ü—Í]** ‚ð‘I‘ð‚µA1 ‚Â‚Ì“ü—ÍƒWƒ‡ƒu **temperature** ‚ª‚·‚Å‚É’è‹`‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚µ‚Ü‚·B
+1. æ¬¡ã«ã€ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®å·¦å´ã«ã‚ã‚‹ **[ã‚¸ãƒ§ãƒ– ãƒˆãƒãƒ­ã‚¸]** ã§ã€**[å…¥åŠ›]** ã‚’é¸æŠžã—ã€1 ã¤ã®å…¥åŠ›ã‚¸ãƒ§ãƒ– **temperature** ãŒã™ã§ã«å®šç¾©ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-1. ŽŸ‚ÉA**[ƒWƒ‡ƒu ƒgƒ|ƒƒW]** ‚Ì‰º‚Ì **[o—Í]** ‚ð‘I‘ð‚µA1 ‚Â‚Ìo—ÍƒWƒ‡ƒu **alert** ‚ª‚·‚Å‚É’è‹`‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚µ‚Ü‚·B
+1. æ¬¡ã«ã€**[ã‚¸ãƒ§ãƒ– ãƒˆãƒãƒ­ã‚¸]** ã®ä¸‹ã® **[å‡ºåŠ›]** ã‚’é¸æŠžã—ã€1 ã¤ã®å‡ºåŠ›ã‚¸ãƒ§ãƒ– **alert** ãŒã™ã§ã«å®šç¾©ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-1. ¶‘¤‚ÌƒiƒrƒQ[ƒVƒ‡ƒ“ ƒƒjƒ…[‚Ì **[\¬]** ‚ÅA[Storage account settings (ƒXƒgƒŒ[ƒW ƒAƒJƒEƒ“ƒg‚ÌÝ’è)] ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·Biotstorage{deployment-id} ƒXƒgƒŒ[ƒW ƒAƒJƒEƒ“ƒg‚ª’Ç‰Á‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚µ‚Ü‚·B
+1. å·¦å´ã®ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã® **[æ§‹æˆ]** ã§ã€[Storage account settings (ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ ã‚¢ã‚«ã‚¦ãƒ³ãƒˆã®è¨­å®š)] ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚iotstorage{deployment-id} ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ ã‚¢ã‚«ã‚¦ãƒ³ãƒˆãŒè¿½åŠ ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-#### Stream Analytics ƒWƒ‡ƒu‚ðƒfƒvƒƒC‚·‚é
+#### Stream Analytics ã‚¸ãƒ§ãƒ–ã‚’ãƒ‡ãƒ—ãƒ­ã‚¤ã™ã‚‹
 
-1. Azure Portal ‚ÅA**iothub-{deployment-id}** IoT Hub ƒŠƒ\[ƒX‚ÉˆÚ“®‚µ‚Ü‚·B
+1. Azure Portal ã§ã€**iothub-{deployment-id}** IoT Hub ãƒªã‚½ãƒ¼ã‚¹ã«ç§»å‹•ã—ã¾ã™ã€‚
 
-1. ¶‘¤‚ÌƒiƒrƒQ[ƒVƒ‡ƒ“ ƒƒjƒ…[‚Ì **[Automatic Device Management (Ž©“®ƒfƒoƒCƒXŠÇ—)]** ‚ÅA**[IoT Edge]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. å·¦å´ã®ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã® **[Automatic Device Management (è‡ªå‹•ãƒ‡ãƒã‚¤ã‚¹ç®¡ç†)]** ã§ã€**[IoT Edge]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[ƒfƒoƒCƒX ID]** ‚Ì‰º‚ÅA**turbine-06** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[ãƒ‡ãƒã‚¤ã‚¹ ID]** ã®ä¸‹ã§ã€**turbine-06** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **turbine-06** ƒEƒBƒ“ƒhƒE‚Ìã•”‚É‚ ‚é **[ƒ‚ƒWƒ…[ƒ‹‚ðÝ’è]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **turbine-06** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä¸Šéƒ¨ã«ã‚ã‚‹ **[ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’è¨­å®š]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]** ƒEƒBƒ“ƒhƒE‚ÅA**IoT Edge Modules** ƒZƒNƒVƒ‡ƒ“‚ðŒ©‚Â‚¯‚Ü‚·B
+1. **[Set modules on device: turbine-06]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã€**IoT Edge Modules** ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã‚’è¦‹ã¤ã‘ã¾ã™ã€‚
 
-1. **[IoT Edge ƒ‚ƒWƒ…[ƒ‹]** ‚Ì‰º‚ÅA**[’Ç‰Á]** ‚ðƒNƒŠƒbƒN‚µ‚Ä‚©‚çA**[Azure Stream Analytics ƒ‚ƒWƒ…[ƒ‹]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã®ä¸‹ã§ã€**[è¿½åŠ ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‹ã‚‰ã€**[Azure Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Edge deployment]** ƒEƒBƒ“ƒhƒE‚Ì **[Subscription]** ‚Ì‰º‚ÅA‚±‚ÌƒR[ƒX‚ÉŽg—p‚µ‚Ä‚¢‚éƒTƒuƒXƒNƒŠƒvƒVƒ‡ƒ“‚ª‘I‘ð‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚µ‚Ü‚·B
+1. **[Edge deployment]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã® **[Subscription]** ã®ä¸‹ã§ã€ã“ã®ã‚³ãƒ¼ã‚¹ã«ä½¿ç”¨ã—ã¦ã„ã‚‹ã‚µãƒ–ã‚¹ã‚¯ãƒªãƒ—ã‚·ãƒ§ãƒ³ãŒé¸æŠžã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-1. **[Edge job (Edge ƒWƒ‡ƒu)]** ƒhƒƒbƒvƒ_ƒEƒ“‚ÅA**iotedge-streamjob-{deployment-id}** Steam Analytics ƒWƒ‡ƒu‚ª‘I‘ð‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ðŠm”F‚µ‚Ü‚·B
+1. **[Edge job (Edge ã‚¸ãƒ§ãƒ–)]** ãƒ‰ãƒ­ãƒƒãƒ—ãƒ€ã‚¦ãƒ³ã§ã€**iotedge-streamjob-{deployment-id}** Steam Analytics ã‚¸ãƒ§ãƒ–ãŒé¸æŠžã•ã‚Œã¦ã„ã‚‹ã“ã¨ã‚’ç¢ºèªã—ã¾ã™ã€‚
 
-    > **’**: ƒWƒ‡ƒu‚Í‚·‚Å‚É‘I‘ð‚³‚ê‚Ä‚¢‚é‰Â”\«‚ª‚ ‚è‚Ü‚·‚ªA**[•Û‘¶]** ƒ{ƒ^ƒ“‚Í–³Œø‚É‚È‚Á‚Ä‚¢‚Ü‚·B**[Edge job (Edge ƒWƒ‡ƒu)]** ƒhƒƒbƒvƒ_ƒEƒ“‚ð‚à‚¤ˆê“xŠJ‚«A**iotedge-streamjob-{deployment-id}** ƒWƒ‡ƒu‚ð‚à‚¤ˆê“x‘I‘ð‚µ‚Ü‚·BŽŸ‚ÉA**[•Û‘¶]** ƒ{ƒ^ƒ“‚ª—LŒø‚É‚È‚è‚Ü‚·B
+    > **æ³¨**: ã‚¸ãƒ§ãƒ–ã¯ã™ã§ã«é¸æŠžã•ã‚Œã¦ã„ã‚‹å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ãŒã€**[ä¿å­˜]** ãƒœã‚¿ãƒ³ã¯ç„¡åŠ¹ã«ãªã£ã¦ã„ã¾ã™ã€‚**[Edge job (Edge ã‚¸ãƒ§ãƒ–)]** ãƒ‰ãƒ­ãƒƒãƒ—ãƒ€ã‚¦ãƒ³ã‚’ã‚‚ã†ä¸€åº¦é–‹ãã€**iotedge-streamjob-{deployment-id}** ã‚¸ãƒ§ãƒ–ã‚’ã‚‚ã†ä¸€åº¦é¸æŠžã—ã¾ã™ã€‚æ¬¡ã«ã€**[ä¿å­˜]** ãƒœã‚¿ãƒ³ãŒæœ‰åŠ¹ã«ãªã‚Šã¾ã™ã€‚
 
-1. ƒEƒBƒ“ƒhƒE‚Ì‰º•”‚É‚ ‚é **[•Û‘¶]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[ä¿å­˜]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-    ƒfƒvƒƒC‚É‚Í­‚µŽžŠÔ‚ª‚©‚©‚éê‡‚ª‚ ‚è‚Ü‚·B
+    ãƒ‡ãƒ—ãƒ­ã‚¤ã«ã¯å°‘ã—æ™‚é–“ãŒã‹ã‹ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]** ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚éA**[Review + create]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[Set modules on device: turbine-06]** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ã€**[Review + create]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Review + create]**ƒ^ƒu‚ÅA**Deployment Manifest** JSON‚ªA\¬‚³‚ê‚½‚Î‚©‚è‚Ì Stream Analytics ƒ‚ƒWƒ…[ƒ‹‚Æƒ‹[ƒeƒBƒ“ƒO’è‹`‚ÅXV‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. **[Review + create]**ã‚¿ãƒ–ã§ã€**Deployment Manifest** JSONãŒã€æ§‹æˆã•ã‚ŒãŸã°ã‹ã‚Šã® Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°å®šç¾©ã§æ›´æ–°ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-1. ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚é **[ì¬]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[ä½œæˆ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. Edge ƒpƒbƒP[ƒW‚ª³í‚ÉŒöŠJ‚³‚ê‚½‚çAV‚µ‚¢ ASA ƒ‚ƒWƒ…[ƒ‹‚ª **[IoT Edge ƒ‚ƒWƒ…[ƒ‹]** ƒZƒNƒVƒ‡ƒ“‚Ì‰º‚ÉƒŠƒXƒg‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. Edge ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒæ­£å¸¸ã«å…¬é–‹ã•ã‚ŒãŸã‚‰ã€æ–°ã—ã„ ASA ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒ **[IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®ä¸‹ã«ãƒªã‚¹ãƒˆã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-1. **[IoT Edge ƒ‚ƒWƒ…[ƒ‹]** ‚Ì‰º‚ÅA**iotedge-streamjob-{deployment-id}** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[IoT Edge ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«]** ã®ä¸‹ã§ã€**iotedge-streamjob-{deployment-id}** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-    ‚±‚ê‚ÍAEdge ƒfƒoƒCƒX‚É’Ç‰Á‚³‚ê‚½‚Î‚©‚è‚Ì Steam Analytics ƒ‚ƒWƒ…[ƒ‹‚Å‚·B
+    ã“ã‚Œã¯ã€Edge ãƒ‡ãƒã‚¤ã‚¹ã«è¿½åŠ ã•ã‚ŒãŸã°ã‹ã‚Šã® Steam Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã§ã™ã€‚
 
-1. **[Update IoT Edge Module]** ƒEƒBƒ“ƒhƒE‚ÅA**[Image URI]** ‚ª•W€‚Ì Azure Stream Analytics ƒCƒ[ƒW‚ðŽw‚µ‚Ä‚¢‚é‚±‚Æ‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B
+1. **[Update IoT Edge Module]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã€**[Image URI]** ãŒæ¨™æº–ã® Azure Stream Analytics ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’æŒ‡ã—ã¦ã„ã‚‹ã“ã¨ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
 
     ```text
     mcr.microsoft.com/azure-stream-analytics/azureiotedge:1.0.7
     ```
 
-    ‚±‚ê‚ÍAIoT Edge ƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚³‚ê‚é‚·‚×‚Ä‚Ì ASA ƒWƒ‡ƒu‚ÉŽg—p‚³‚ê‚é‚Ì‚Æ“¯‚¶ƒCƒ[ƒW‚Å‚·B
+    ã“ã‚Œã¯ã€IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã‚‹ã™ã¹ã¦ã® ASA ã‚¸ãƒ§ãƒ–ã«ä½¿ç”¨ã•ã‚Œã‚‹ã®ã¨åŒã˜ã‚¤ãƒ¡ãƒ¼ã‚¸ã§ã™ã€‚
 
-    > **’**:  \¬‚³‚ê‚Ä‚¢‚é **[ƒCƒ[ƒW URI]** ‚Ì––”ö‚É‚ ‚éƒo[ƒWƒ‡ƒ“”Ô†‚ÍAStream Analytics ƒ‚ƒWƒ…[ƒ‹‚ðì¬‚µ‚½Žž“_‚Å‚ÌŒ»sÅVƒo[ƒWƒ‡ƒ“‚ð”½‰f‚µ‚Ü‚·B
+    > **æ³¨**:  æ§‹æˆã•ã‚Œã¦ã„ã‚‹ **[ã‚¤ãƒ¡ãƒ¼ã‚¸ URI]** ã®æœ«å°¾ã«ã‚ã‚‹ãƒãƒ¼ã‚¸ãƒ§ãƒ³ç•ªå·ã¯ã€Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã‚’ä½œæˆã—ãŸæ™‚ç‚¹ã§ã®ç¾è¡Œæœ€æ–°ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’åæ˜ ã—ã¾ã™ã€‚
 
-1. ‚·‚×‚Ä‚Ì’l‚ðƒfƒtƒHƒ‹ƒg‚Ì‚Ü‚Ü‚É‚µ‚ÄA**[IoT Edge Custom Modules]** ƒEƒBƒ“ƒhƒE‚ð•Â‚¶‚Ü‚·B
+1. ã™ã¹ã¦ã®å€¤ã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã¾ã¾ã«ã—ã¦ã€**[IoT Edge Custom Modules]** ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]**ƒEƒBƒ“ƒhƒE‚ÅA**[Next: Routes >]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[Set modules on device: turbine-06]**ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã§ã€**[Next: Routes >]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-    Šù‘¶‚Ìƒ‹[ƒeƒBƒ“ƒO‚ª•\Ž¦‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B
+    æ—¢å­˜ã®ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ãŒè¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚
 
-1. ’è‹`‚³‚ê‚Ä‚¢‚éŠù’è‚Ìƒ‹[ƒg‚ðŽŸ‚Ì 3 ‚Â‚Ìƒ‹[ƒg‚É’u‚«Š·‚¦‚Ü‚·B
+1. å®šç¾©ã•ã‚Œã¦ã„ã‚‹æ—¢å®šã®ãƒ«ãƒ¼ãƒˆã‚’æ¬¡ã® 3 ã¤ã®ãƒ«ãƒ¼ãƒˆã«ç½®ãæ›ãˆã¾ã™ã€‚
    
-   > **’**: •K‚¸ `iotstreamjob-edge-{deployment-id}` ƒvƒŒ[ƒXƒzƒ‹ƒ_[‚ð Azure Stream Analytics ƒWƒ‡ƒu ƒ‚ƒWƒ…[ƒ‹‚Ì–¼‘O‚É’u‚«Š·‚¦‚Ä‚­‚¾‚³‚¢B
+   > **æ³¨**: å¿…ãš `iotstreamjob-edge-{deployment-id}` ãƒ—ãƒ¬ãƒ¼ã‚¹ãƒ›ãƒ«ãƒ€ãƒ¼ã‚’ Azure Stream Analytics ã‚¸ãƒ§ãƒ– ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®åå‰ã«ç½®ãæ›ãˆã¦ãã ã•ã„ã€‚
    
-    * ƒ‹[ƒg 1
-        * –¼‘O: **telemetryToCloud**
-        * ’l: `FROM /messages/modules/turbinesensor/* INTO $upstream`
-    * ƒ‹[ƒg 2
-        * –¼‘O: **alertsToReset**
-        * ’l: `/messages/modules/iotedge-streamjob-{deployment-id}/* ‚©‚ç BrokeredEndpoint("/modules/turbinesensor/inputs/control")` ‚Ö
-    * ƒ‹[ƒg 3
-        * –¼‘O: **telemetryToAsa**
-        * ’l: `/messages/modules/turbinesensor/* ‚©‚ç BrokeredEndpoint("/modules/iotedge-streamjob-{deployment-id}/inputs/temperature")` ‚Ö
+    * ãƒ«ãƒ¼ãƒˆ 1
+        * åå‰: **telemetryToCloud**
+        * å€¤: `FROM /messages/modules/turbinesensor/* INTO $upstream`
+    * ãƒ«ãƒ¼ãƒˆ 2
+        * åå‰: **alertsToReset**
+        * å€¤: `/messages/modules/iotedge-streamjob-{deployment-id}/* ã‹ã‚‰ BrokeredEndpoint("/modules/turbinesensor/inputs/control")` ã¸
+    * ãƒ«ãƒ¼ãƒˆ 3
+        * åå‰: **telemetryToAsa**
+        * å€¤: `/messages/modules/turbinesensor/* ã‹ã‚‰ BrokeredEndpoint("/modules/iotedge-streamjob-{deployment-id}/inputs/temperature")` ã¸
 
-    > **’**: **[‘O‚Ö]** ‚ðƒNƒŠƒbƒN‚µ‚Äƒ‚ƒWƒ…[ƒ‹‚Æ‚»‚Ì–¼‘O‚ÌƒŠƒXƒg‚ð•\Ž¦‚µA**[ŽŸ‚Ö]** ‚ðƒNƒŠƒbƒN‚µ‚Ä‚±‚ÌŽè‡‚É–ß‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B
+    > **æ³¨**: **[å‰ã¸]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ãã®åå‰ã®ãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã—ã€**[æ¬¡ã¸]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã“ã®æ‰‹é †ã«æˆ»ã‚‹ã“ã¨ãŒã§ãã¾ã™ã€‚
 
-    ’è‹`‚³‚ê‚Ä‚¢‚éƒ‹[ƒg‚ÍŽŸ‚Ì‚Æ‚¨‚è‚Å‚·B
+    å®šç¾©ã•ã‚Œã¦ã„ã‚‹ãƒ«ãƒ¼ãƒˆã¯æ¬¡ã®ã¨ãŠã‚Šã§ã™ã€‚
 
-    * **telemetryToCloud** ƒ‹[ƒg‚ÍA`turbinesensor` ƒ‚ƒWƒ…[ƒ‹o—Í‚©‚ç‚Ì‚·‚×‚Ä‚ÌƒƒbƒZ[ƒW‚ð Azure IoT Hub ‚É‘—M‚µ‚Ü‚·B
-    * **alertsToReset** ƒ‹[ƒg‚ÍAStream Analytics ƒ‚ƒWƒ…[ƒ‹o—Í‚©‚ç‚Ì‚·‚×‚Ä‚ÌƒAƒ‰[ƒg ƒƒbƒZ[ƒW‚ð **turbinesensor** ƒ‚ƒWƒ…[ƒ‹‚Ì“ü—Í‚É‘—M‚µ‚Ü‚·B
-    * **telemetryToAsa** ƒ‹[ƒg‚ÍA`turbinesensor` ƒ‚ƒWƒ…[ƒ‹o—Í‚©‚ç‚Ì‚·‚×‚Ä‚ÌƒƒbƒZ[ƒW‚ð Stream Analytics ƒ‚ƒWƒ…[ƒ‹“ü—Í‚É‘—M‚µ‚Ü‚·B
+    * **telemetryToCloud** ãƒ«ãƒ¼ãƒˆã¯ã€`turbinesensor` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å‡ºåŠ›ã‹ã‚‰ã®ã™ã¹ã¦ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ Azure IoT Hub ã«é€ä¿¡ã—ã¾ã™ã€‚
+    * **alertsToReset** ãƒ«ãƒ¼ãƒˆã¯ã€Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å‡ºåŠ›ã‹ã‚‰ã®ã™ã¹ã¦ã®ã‚¢ãƒ©ãƒ¼ãƒˆ ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ **turbinesensor** ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®å…¥åŠ›ã«é€ä¿¡ã—ã¾ã™ã€‚
+    * **telemetryToAsa** ãƒ«ãƒ¼ãƒˆã¯ã€`turbinesensor` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å‡ºåŠ›ã‹ã‚‰ã®ã™ã¹ã¦ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«å…¥åŠ›ã«é€ä¿¡ã—ã¾ã™ã€‚
 
-1. **[Set modules on device: turbine-06]** ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚éA**[Review + create]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. **[Set modules on device: turbine-06]** ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ã€**[Review + create]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-1. **[Review + create]**ƒ^ƒu‚ÅA**Deployment Manifest** JSON‚ªA\¬‚³‚ê‚½‚Î‚©‚è‚Ì Stream Analytics ƒ‚ƒWƒ…[ƒ‹‚Æƒ‹[ƒeƒBƒ“ƒO’è‹`‚ÅXV‚³‚ê‚Ä‚¢‚é‚±‚Æ‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. **[Review + create]**ã‚¿ãƒ–ã§ã€**Deployment Manifest** JSONãŒã€æ§‹æˆã•ã‚ŒãŸã°ã‹ã‚Šã® Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¨ãƒ«ãƒ¼ãƒ†ã‚£ãƒ³ã‚°å®šç¾©ã§æ›´æ–°ã•ã‚Œã¦ã„ã‚‹ã“ã¨ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
-1. `turbinesensor` Simulated Temperature Sensor ƒ‚ƒWƒ…[ƒ‹‚Ì JSON \¬‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. `turbinesensor` Simulated Temperature Sensor ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã® JSON æ§‹æˆã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
     ```json
     "turbinesensor": {
@@ -373,7 +373,7 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     },
     ```
 
-1. ˆÈ‘O‚É\¬‚³‚ê‚½ƒ‹[ƒg‚Ì JSON \¬‚ÆAJSON ƒfƒvƒƒC’è‹`‚Å‚»‚ê‚ç‚ª‚Ç‚Ì‚æ‚¤‚É\¬‚³‚ê‚Ä‚¢‚é‚©‚É’–Ú‚µ‚Ä‚­‚¾‚³‚¢B
+1. ä»¥å‰ã«æ§‹æˆã•ã‚ŒãŸãƒ«ãƒ¼ãƒˆã® JSON æ§‹æˆã¨ã€JSON ãƒ‡ãƒ—ãƒ­ã‚¤å®šç¾©ã§ãã‚Œã‚‰ãŒã©ã®ã‚ˆã†ã«æ§‹æˆã•ã‚Œã¦ã„ã‚‹ã‹ã«æ³¨ç›®ã—ã¦ãã ã•ã„ã€‚
 
     ```json
     "$edgeHub": {
@@ -391,21 +391,21 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     },
     ```
 
-1. ƒuƒŒ[ƒh‚Ì‰º•”‚É‚ ‚é **[ì¬]** ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
+1. ãƒ–ãƒ¬ãƒ¼ãƒ‰ã®ä¸‹éƒ¨ã«ã‚ã‚‹ **[ä½œæˆ]** ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
 
-#### ƒf[ƒ^‚ðŒ©‚é
+#### ãƒ‡ãƒ¼ã‚¿ã‚’è¦‹ã‚‹
 
-1. **SSH** ‚ð‰î‚µ‚Ä **IoT Edge ƒfƒoƒCƒX**‚ÉÚ‘±‚µ‚Ä‚¢‚é **Cloud Shell** ƒZƒbƒVƒ‡ƒ“‚É–ß‚è‚Ü‚·B  
+1. **SSH** ã‚’ä»‹ã—ã¦ **IoT Edge ãƒ‡ãƒã‚¤ã‚¹**ã«æŽ¥ç¶šã—ã¦ã„ã‚‹ **Cloud Shell** ã‚»ãƒƒã‚·ãƒ§ãƒ³ã«æˆ»ã‚Šã¾ã™ã€‚  
 
-    > **’**: Ú‘±‚ª•Â‚¶‚Ä‚¢‚é‚©ƒ^ƒCƒ€ƒAƒEƒg‚µ‚½ê‡‚ÍAÄÚ‘±‚µ‚Ü‚·B`SSH` ƒRƒ}ƒ“ƒh‚ðŽÀs‚µA‘O‚Æ“¯‚¶‚æ‚¤‚ÉƒƒOƒCƒ“‚µ‚Ü‚·B
+    > **æ³¨**: æŽ¥ç¶šãŒé–‰ã˜ã¦ã„ã‚‹ã‹ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã—ãŸå ´åˆã¯ã€å†æŽ¥ç¶šã—ã¾ã™ã€‚`SSH` ã‚³ãƒžãƒ³ãƒ‰ã‚’å®Ÿè¡Œã—ã€å‰ã¨åŒã˜ã‚ˆã†ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚
 
-1. ƒRƒ}ƒ“ƒh ƒvƒƒ“ƒvƒg‚ÅAƒfƒoƒCƒX‚ÉƒfƒvƒƒC‚³‚ê‚Ä‚¢‚éƒ‚ƒWƒ…[ƒ‹‚ÌƒŠƒXƒg‚ð•\Ž¦‚·‚é‚É‚ÍAŽŸ‚ÌƒRƒ}ƒ“ƒh‚ð“ü—Í‚µ‚Ü‚·B
+1. ã‚³ãƒžãƒ³ãƒ‰ ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§ã€ãƒ‡ãƒã‚¤ã‚¹ã«ãƒ‡ãƒ—ãƒ­ã‚¤ã•ã‚Œã¦ã„ã‚‹ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ã«ã¯ã€æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
     ```cmd/sh
     iotedge list
     ```
 
-    V‚µ‚¢ Stream Analytics ƒ‚ƒWƒ…[ƒ‹‚Ì IoT Edge ƒfƒoƒCƒX‚Ö‚ÌƒfƒvƒƒC‚É‚ÍA­‚µ‚ÌŽžŠÔ‚ª‚©‚©‚éê‡‚ª‚ ‚è‚Ü‚·B“WŠJ‚³‚ê‚½‚çA‚±‚ÌƒRƒ}ƒ“ƒh‚É‚æ‚Á‚Äo—Í‚³‚ê‚éƒŠƒXƒg‚É•\Ž¦‚³‚ê‚Ü‚·B
+    æ–°ã—ã„ Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã® IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã¸ã®ãƒ‡ãƒ—ãƒ­ã‚¤ã«ã¯ã€å°‘ã—ã®æ™‚é–“ãŒã‹ã‹ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚å±•é–‹ã•ã‚ŒãŸã‚‰ã€ã“ã®ã‚³ãƒžãƒ³ãƒ‰ã«ã‚ˆã£ã¦å‡ºåŠ›ã•ã‚Œã‚‹ãƒªã‚¹ãƒˆã«è¡¨ç¤ºã•ã‚Œã¾ã™ã€‚
 
     ```cmd/sh
     demouser@linuxagentvm-{deployment-id}:~$ iotedge list
@@ -416,17 +416,17 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     turbinesensor              running          Up 4 hours       asaedgedockerhubtest/asa-edge-test-module:simulated-temperature-sensor
     ``` 
 
-    > **’**:  Stream Analytics ƒ‚ƒWƒ…[ƒ‹‚ªƒŠƒXƒg‚É•\Ž¦‚³‚ê‚È‚¢ê‡‚ÍA1 ` 2 •ª‘Ò‚Á‚Ä‚©‚ç‚à‚¤ˆê“xŽŽ‚µ‚Ä‚­‚¾‚³‚¢Bƒ‚ƒWƒ…[ƒ‹‚ÌƒfƒvƒƒC‚ª IoT Edge ƒfƒoƒCƒX‚ÅXV‚³‚ê‚é‚É‚ÍA­‚µ‚ÌŽžŠÔ‚ª‚©‚©‚éê‡‚ª‚ ‚è‚Ü‚·B
+    > **æ³¨**:  Stream Analytics ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãŒãƒªã‚¹ãƒˆã«è¡¨ç¤ºã•ã‚Œãªã„å ´åˆã¯ã€1 ï½ž 2 åˆ†å¾…ã£ã¦ã‹ã‚‰ã‚‚ã†ä¸€åº¦è©¦ã—ã¦ãã ã•ã„ã€‚ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ãƒ‡ãƒ—ãƒ­ã‚¤ãŒ IoT Edge ãƒ‡ãƒã‚¤ã‚¹ã§æ›´æ–°ã•ã‚Œã‚‹ã«ã¯ã€å°‘ã—ã®æ™‚é–“ãŒã‹ã‹ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
 
-1. `turbinesensor` ƒ‚ƒWƒ…[ƒ‹‚É‚æ‚Á‚Ä Edge ƒfƒoƒCƒX‚©‚ç‘—M‚³‚ê‚éƒeƒŒƒƒgƒŠ‚ðŠÄŽ‹‚·‚é‚É‚ÍAƒRƒ}ƒ“ƒh ƒvƒƒ“ƒvƒg‚ÅŽŸ‚ÌƒRƒ}ƒ“ƒh‚ð“ü—Í‚µ‚Ü‚·B
+1. `turbinesensor` ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã«ã‚ˆã£ã¦ Edge ãƒ‡ãƒã‚¤ã‚¹ã‹ã‚‰é€ä¿¡ã•ã‚Œã‚‹ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªã‚’ç›£è¦–ã™ã‚‹ã«ã¯ã€ã‚³ãƒžãƒ³ãƒ‰ ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§æ¬¡ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’å…¥åŠ›ã—ã¾ã™ã€‚
 
     ```cmd/sh
     iotedge logs turbinesensor
     ```
 
-1. ­‚µŽžŠÔ‚ðŽæ‚Á‚Äo—Í‚ðŠÏŽ@‚µ‚Ü‚·B
+1. å°‘ã—æ™‚é–“ã‚’å–ã£ã¦å‡ºåŠ›ã‚’è¦³å¯Ÿã—ã¾ã™ã€‚
  
-    ‚±‚ÌƒCƒxƒ“ƒg‚Ìo—Í‚ÍŽŸ‚Ì‚æ‚¤‚É‚È‚è‚Ü‚·B
+    ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã®å‡ºåŠ›ã¯æ¬¡ã®ã‚ˆã†ã«ãªã‚Šã¾ã™ã€‚
 
     ```cmd/sh
     11/14/2019 22:26:44 - Send Json Event : {"machine":{"temperature":231.599999999999959,"pressure":1.0095600761599359},"ambient":{"temperature":21.430643635304012,"humidity":24},"timeCreated":"2019-11-14T22:26:44.7904425Z"}
@@ -438,6 +438,6 @@ IoT Edge ƒ‚ƒWƒ…[ƒ‹‚©‚çAƒNƒ‰ƒEƒh ƒ[ƒNƒ[ƒh‚ðƒfƒvƒƒC‚µ‚ÄAIoT ƒfƒoƒCƒX‚Å’¼Ú
     11/14/2019 22:26:45 - Send Json Event : {"machine":{"temperature":320.4,"pressure":0.99945886361358849},"ambient":{"temperature":20.940019742324957,"humidity":26},"timeCreated":"2019-11-14T22:26:45.7931201Z"}
     ```
  
-1. **turbinesensor** ‚É‚æ‚Á‚Ä‘—M‚³‚ê‚é‰·“xƒeƒŒƒƒgƒŠ‚ðŠÄŽ‹‚µ‚Ä‚¢‚é‚Æ‚«‚ÉA`machine.temperature` ‚ª•½‹Ï‚Å `72` ‚ð’´‚¦‚é‚ÆAStream Analytics ƒWƒ‡ƒu‚É‚æ‚Á‚Ä **reset** ƒRƒ}ƒ“ƒh‚ª‘—M‚³‚ê‚é‚±‚Æ‚É’ˆÓ‚µ‚Ä‚­‚¾‚³‚¢B‚±‚ê‚ÍAStream Analytics ƒWƒ‡ƒu ƒNƒGƒŠ‚ÅÝ’è‚³‚ê‚½ƒAƒNƒVƒ‡ƒ“‚Å‚·B
+1. **turbinesensor** ã«ã‚ˆã£ã¦é€ä¿¡ã•ã‚Œã‚‹æ¸©åº¦ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªã‚’ç›£è¦–ã—ã¦ã„ã‚‹ã¨ãã«ã€`machine.temperature` ãŒå¹³å‡ã§ `72` ã‚’è¶…ãˆã‚‹ã¨ã€Stream Analytics ã‚¸ãƒ§ãƒ–ã«ã‚ˆã£ã¦ **reset** ã‚³ãƒžãƒ³ãƒ‰ãŒé€ä¿¡ã•ã‚Œã‚‹ã“ã¨ã«æ³¨æ„ã—ã¦ãã ã•ã„ã€‚ã“ã‚Œã¯ã€Stream Analytics ã‚¸ãƒ§ãƒ– ã‚¯ã‚¨ãƒªã§è¨­å®šã•ã‚ŒãŸã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã§ã™ã€‚
 
-‚±‚Ì‰‰K‚Å‚ÍAAzure IoT Edge ƒT[ƒrƒX‚ð—˜—p‚µ‚Ä Edge ƒfƒoƒCƒX‚ÅƒƒbƒZ[ƒW‚ðˆ—‚µ‚Ü‚µ‚½B
+ã“ã®æ¼”ç¿’ã§ã¯ã€Azure IoT Edge ã‚µãƒ¼ãƒ“ã‚¹ã‚’åˆ©ç”¨ã—ã¦ Edge ãƒ‡ãƒã‚¤ã‚¹ã§ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å‡¦ç†ã—ã¾ã—ãŸã€‚
